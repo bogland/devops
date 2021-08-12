@@ -15,3 +15,7 @@ EXPOSE 3000
 > docker exec -it angry_lamarr sh  
 > docker cp hungry_mcnulty:/home/oh/test/react/my-app ./src  
 - 컨테이너 To 호스트 파일 이동
+> docker login
+> docker tag react guruwang/react
+- docker push는 사용자명/image명 으로 사용자명이 일치해야 전송됨
+> docker push guruwang/react
