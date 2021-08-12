@@ -13,3 +13,5 @@ EXPOSE 3000
 > docker build -t react .  
 > docker run -d -p 3000:3000 react  
 > docker exec -it angry_lamarr sh  
+> docker cp hungry_mcnulty:/home/oh/test/react/my-app ./src  
+- 컨테이너 To 호스트 파일 이동
