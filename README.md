@@ -21,3 +21,9 @@ EXPOSE 3000
 > docker tag react guruwang/react  
 #docker push는 사용자명/image명 으로 사용자명이 일치해야 전송됨  
 > docker push guruwang/react  
+
+## Nginx 배포
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+#nginx 설치시 참조하는 html 경로에 있는 index.html을 COPY명령어를 통해서 대체하면  
+컨테이너 실행시 변경된 index.html 바로 실행됨  
