@@ -52,7 +52,7 @@ services:
       - "80:80"  
     networks:  
     - backend  
-  # api:  
+  #api:  
   db: # 서비스 명  
     image: mysql # 사용할 이미지  
     restart: always  
