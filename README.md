@@ -48,7 +48,7 @@ RUN cp -r 오늘의집/* .
 RUN rm -rf 오늘의집  
 ```
 
-## Docker Compose - NGINX + MYSQL  
+## Docker Compose - NGINX + Express +  MYSQL  
 ```
 version: "3.9"
 services:
