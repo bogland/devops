@@ -50,38 +50,44 @@ RUN rm -rf 오늘의집
 
 ## Docker Compose - NGINX + MYSQL  
 ```
-version: "3.9"  
-services:  
-  web:  
-    build: .  
-    ports:  
-      - "80:80"  
-    networks:  
-    - backend  
-  #api:  
-  db: # 서비스 명  
-    image: mysql # 사용할 이미지  
-    restart: always  
-    container_name: mysql-test # 컨테이너 이름 설정  
-    ports:  
-      - "3306:3306" # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)  <- 컨테이너 내부는 무조건 3306  
-    environment: # -e 옵션  
-      MYSQL_ROOT_PASSWORD: "0000"  
-      # "-"를 쓰지 않는 경우엔 key:value 구조를 사용해야함  
-      MYSQL_USER: "test"  
-      MYSQL_PASSWORD: "0000"  
-      MYSQL_DATABASE: "test"   
-      TZ: Asia/Seoul  
-    command: # 명령어 실행  
+version: "3.9"
+services:
+  web:
+    build: ./todayhouse
+    ports:
+      - "80:80"
+    networks:
+      - frontend
+  api:
+    build: ./api
+      - "5000:5000"
+    networks:
+      - frontend
+      - backend
+  db: # 서비스 명
+    image: mysql # 사용할 이미지
+    restart: always
+    container_name: mysql-test # 컨테이너 이름 설정
+    # ports: #컨테이너에서만 접근할 수 있도록 주석처리
+    #   - "3307:3306" # 접근 포트 설정 (컨테이너 외부:컨테이너 내부)  <- 컨테이너 내부는 무조건 3306
+    environment: # -e 옵션
+      MYSQL_ROOT_PASSWORD: "0000"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "0000"
+      MYSQL_DATABASE: "test" 
+      TZ: Asia/Seoul
+    command: # 명령어 실행
       - --character-set-server=utf8mb4
-      #dash를 쓰는 경우엔 key=value 구조를 사용해야함  
-      - --collation-server=utf8mb4_unicode_ci  
-    volumes:  
-      - /var/dbdata:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)  
-    networks:  
-    - backend  
+      - --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - /var/dbdata:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
+    networks:
+      - backend
 
-networks: # 가장 기본적인 bridge 네트워크  
-  backend:  
-    driver: bridge  
+networks: # 가장 기본적인 bridge 네트워크
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
 ```
+
