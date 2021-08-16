@@ -29,6 +29,7 @@ COPY . /usr/share/nginx/html
 컨테이너 실행시 변경된 index.html 바로 실행됨  
 
 ## GITHUB + Nginx 배포  
+```
 FROM nginx:alpine  
 WORKDIR /usr/share/nginx/html  
 RUN apk update && apk upgrade && \  
@@ -42,8 +43,10 @@ RUN git pull origin master
 RUN cp -r 오늘의집/* .  
 #mv대신 cp를 이용하면 히든파일까지 보내짐  
 RUN rm -rf 오늘의집  
+```
 
 ## Docker Compose - NGINX + MYSQL  
+```
 version: "3.9"  
 services:  
   web:  
@@ -78,3 +81,4 @@ services:
 networks: # 가장 기본적인 bridge 네트워크  
   backend:  
     driver: bridge  
+```
