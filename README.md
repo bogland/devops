@@ -90,4 +90,15 @@ networks: # 가장 기본적인 bridge 네트워크
   backend:
     driver: bridge
 ```
+## Reverse Proxy  
+https://minholee93.tistory.com/entry/Nginx-Reverse-Proxy  
 
+## Jenkins  
+1. 환경 구성  
+http://jmlim.github.io/docker/2019/02/25/docker-jenkins-setup/  
+2. github token 등록  
+https://uchupura.tistory.com/63  
+3. githook 설정  
+https://uang.tistory.com/14  
+4. 배포 자동화  
+https://nerd-mix.tistory.com/37
