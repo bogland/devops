@@ -105,3 +105,6 @@ https://www.youtube.com/watch?v=Z2Sw1WiREFw
 https://nerd-mix.tistory.com/37  
 -> 여길 aws private 주소로 넣어줘야함  
 https://nerd-mix.tistory.com/38?category=824214
+
+Failed to add SSH key. Message [invalid privatekey:  
+-> https://blog.gizmo80.com/101  
