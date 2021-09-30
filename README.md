@@ -105,6 +105,12 @@ https://www.youtube.com/watch?v=Z2Sw1WiREFw
 https://nerd-mix.tistory.com/37  
 -> 여길 aws private 주소로 넣어줘야함  
 https://nerd-mix.tistory.com/38?category=824214
+주의점 몇가지 적어놈
+1. docker의 ~/.ssh/rsa.pub key값을 host  ~/.ssh/ authorized_keys에 넣어줘야 한다. 그리고 ssh ubuntu@[내부망ip로] 테스트    
+2. jenkins 구성에서 GitHub hook trigger for GITScm polling 체크하고 저장    
+3. github에서 hook 설정이랑 jenkins 퍼블릭키 등록  
+4. jenkins 구성에서 빌드에 서버 소스는 **/*, 명령어는 cd ~/htmlstudy git pull  
+5. 서버 연동을 위한 plugin은 over ssh 랑 github integration(이거 필요 없을지도)   
 
 Failed to add SSH key. Message [invalid privatekey:  
 -> https://blog.gizmo80.com/101  
