@@ -102,6 +102,6 @@ https://uchupura.tistory.com/63
 https://uang.tistory.com/14  
 4. 배포 자동화  
 https://www.youtube.com/watch?v=Z2Sw1WiREFw    
-https://nerd-mix.tistory.com/37
+https://nerd-mix.tistory.com/37  
 -> 여길 aws private 주소로 넣어줘야함
 https://nerd-mix.tistory.com/38?category=824214
