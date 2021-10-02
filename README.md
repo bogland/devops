@@ -114,3 +114,28 @@ https://nerd-mix.tistory.com/38?category=824214
 
 Failed to add SSH key. Message [invalid privatekey:  
 -> https://blog.gizmo80.com/101  
+
+## MYSQL 설치  
+enviorment에 database userid,pw를 적어봤자 생성 안됨
+```
+version: "3"
+services:
+  db: # 서비스 명
+    image: mysql # 사용할 이미지
+    restart: always
+    environment: # -e 옵션
+      MYSQL_ROOT_PASSWORD: "비밀번호"
+      TZ: Asia/Seoul
+    ports:
+      - "외부포트:3306"
+    volumes:
+      - /var/dbdata:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
+
+```
+계정 생성, IP 접근 허용, 데이터베이스 생성   
+```
+mysql> create user '유저이름'@'%' identified by '비밀번호';
+mysql> grant all privileges on *.* to '유저이름'@'%';
+mysql> flush privileges;
+mysql> CREATE DATABASE 데이터베이스명 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+```
