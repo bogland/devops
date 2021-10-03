@@ -139,3 +139,11 @@ mysql> grant all privileges on *.* to '유저이름'@'%';
 mysql> flush privileges;
 mysql> CREATE DATABASE 데이터베이스명 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 ```
+
+## EC2 메모리 부족시 Freeze 해결  
+swap파일을 이용하면 하드디스크를 메모리로 사용 가능  
+```
+free > 메모리 확인
+df > 하드디스크 용량 확인
+```
+https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-memory-swap-file/
