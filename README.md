@@ -90,4 +90,60 @@ networks: # 가장 기본적인 bridge 네트워크
   backend:
     driver: bridge
 ```
+## Reverse Proxy  
+https://minholee93.tistory.com/entry/Nginx-Reverse-Proxy  
 
+## Jenkins  
+1. 환경 구성  
+http://jmlim.github.io/docker/2019/02/25/docker-jenkins-setup/  
+2. github token 등록  
+https://uchupura.tistory.com/63  
+3. githook 설정  
+https://uang.tistory.com/14  
+4. 배포 자동화  
+https://www.youtube.com/watch?v=Z2Sw1WiREFw    
+https://nerd-mix.tistory.com/37  
+-> 여길 aws private 주소로 넣어줘야함  
+https://nerd-mix.tistory.com/38?category=824214
+주의점 몇가지 적어놈
+1. docker의 ~/.ssh/rsa.pub key값을 host  ~/.ssh/ authorized_keys에 넣어줘야 한다. 그리고 ssh ubuntu@[내부망ip로] 테스트    
+2. jenkins 구성에서 GitHub hook trigger for GITScm polling 체크하고 저장    
+3. github에서 hook 설정이랑 jenkins 퍼블릭키 등록  
+4. jenkins 구성에서 빌드에 서버 소스는 **/*, 명령어는 cd ~/htmlstudy git pull  
+5. 서버 연동을 위한 plugin은 over ssh 랑 github integration(이거 필요 없을지도)   
+
+Failed to add SSH key. Message [invalid privatekey:  
+-> https://blog.gizmo80.com/101  
+
+## MYSQL 설치  
+enviorment에 database userid,pw를 적어봤자 생성 안됨
+```
+version: "3"
+services:
+  db: # 서비스 명
+    image: mysql # 사용할 이미지
+    restart: always
+    environment: # -e 옵션
+      MYSQL_ROOT_PASSWORD: "비밀번호"
+      TZ: Asia/Seoul
+    ports:
+      - "외부포트:3306"
+    volumes:
+      - /var/dbdata:/var/lib/mysql # -v 옵션 (다렉토리 마운트 설정)
+
+```
+계정 생성, IP 접근 허용, 데이터베이스 생성   
+```
+mysql> create user '유저이름'@'%' identified by '비밀번호';
+mysql> grant all privileges on *.* to '유저이름'@'%';
+mysql> flush privileges;
+mysql> CREATE DATABASE 데이터베이스명 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+```
+
+## EC2 메모리 부족시 Freeze 해결  
+swap파일을 이용하면 하드디스크를 메모리로 사용 가능  
+```
+free > 메모리 확인
+df > 하드디스크 용량 확인
+```
+https://aws.amazon.com/ko/premiumsupport/knowledge-center/ec2-memory-swap-file/
