@@ -137,6 +137,7 @@ services:
 ```
 계정 생성, IP 접근 허용, 데이터베이스 생성   
 ```
+mysql -u root -p
 mysql> create user '유저이름'@'%' identified by '비밀번호';
 mysql> grant all privileges on *.* to '유저이름'@'%';
 mysql> flush privileges;
