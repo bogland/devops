@@ -2,7 +2,16 @@
 도커, 쿠버네티스, 제플린 활용 방안 연구  
 
 ## 도커 설치  
-https://dongle94.github.io/docker/docker-ubuntu-install/  
+https://dongle94.github.io/docker/docker-ubuntu-install/    
+https://sup2is.tistory.com/91 docker-ce 설치 에러  
+#### 도커 권한 이슈  
+```
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
+sudo service docker restart
+```
+
 
 ## DOCKERFILE
 1. create React CRA  
