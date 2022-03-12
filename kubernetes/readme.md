@@ -34,10 +34,20 @@ systemctl restart docker
 > journalctl -xeu kubelet
 ```
 
+## 쿠버네티스 에러  
+failed to create API client configuration from kubeconfig: invalid configuration: [context was not found for specified context: default  
+
+
 ## 쿠버네티스 에러 - the connection to the server localhost:8080 was refused
 ```
 sudo docker stop $(sudo docker ps -aq)
 sudo docker rm $(docker ps -a -q) 
+
+
+```
+sudo -i
+export KUBECONFIG=/etc/kubernetes/admin.conf
+```
 
 일반사용자 권한 추가
 sudo mkdir -p $HOME/.kube
