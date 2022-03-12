@@ -11,6 +11,9 @@ To see the stack trace of this error execute with --v=5 or higher
 ```
 > kubeadm token create --print-join-command
 
+## Worker Node NotReady  
+> kubectl describe node ip-172-31-3-76  
+
 ## 쿠버네티스 40s 에러시  
 https://blusky10.tistory.com/473  
 ```
