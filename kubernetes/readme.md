@@ -4,6 +4,13 @@ https://lindarex.github.io/kubernetes/ubuntu-kubernetes-installation-with-kubead
 master는 init  
 worker는 join  
 
+## Worker Node Join 에러시
+```
+accepts at most 1 arg(s), received 2
+To see the stack trace of this error execute with --v=5 or higher
+```
+> kubeadm token create --print-join-command
+
 ## 쿠버네티스 40s 에러시  
 https://blusky10.tistory.com/473  
 ```
