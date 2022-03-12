@@ -18,7 +18,7 @@ To see the stack trace of this error execute with --v=5 or higher
 > kubeadm token create --print-join-command
 
 ## Worker Node NotReady  
-> kubectl describe node ip-172-31-3-76  
+> kubectl describe node <node 이름>
 
 ## 쿠버네티스 40s 에러시  
 https://blusky10.tistory.com/473  
@@ -36,18 +36,15 @@ systemctl restart docker
 
 ## 쿠버네티스 에러  
 failed to create API client configuration from kubeconfig: invalid configuration: [context was not found for specified context: default  
-
+```
+sudo -i
+export KUBECONFIG=/etc/kubernetes/admin.conf
+```
 
 ## 쿠버네티스 에러 - the connection to the server localhost:8080 was refused
 ```
 sudo docker stop $(sudo docker ps -aq)
 sudo docker rm $(docker ps -a -q) 
-
-
-```
-sudo -i
-export KUBECONFIG=/etc/kubernetes/admin.conf
-```
 
 일반사용자 권한 추가
 sudo mkdir -p $HOME/.kube
