@@ -5,8 +5,10 @@ master는 init
 worker는 join  
 
 ## 방화벽 제거  
+```
 systemctl stop firewalld  
 systemctl disable firewalld  
+```
 
 ## Worker Node Join 에러시
 ```
