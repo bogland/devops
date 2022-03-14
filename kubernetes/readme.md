@@ -55,6 +55,16 @@ root권한에서 환경변수 등록
 export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 
+## 쿠버네티스 에러   
+```
+Error in configuration: 
+* unable to read client-cert /var/lib/kubelet/pki/kubelet-client-current.pem for system:node:kube.master.node due to open /var/lib/kubelet/pki/kubelet-client-current.pem: permission denied
+```
+```
+systemctl daemon-reload
+systemctl restart kubelet
+```
+
 ## 쿠버네티스 EC2에서 Join
 nc -zv 1.236.xxx.xxx 6443 으로 포트 접근 가능한지 확인  
 *no route to host 에러시  
