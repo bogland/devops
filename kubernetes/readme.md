@@ -57,6 +57,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 root권한에서 환경변수 등록
 export KUBECONFIG=/etc/kubernetes/admin.conf
+sudo chown <user> /etc/kubernetes/admin.conf^
 ```
 
 ## 쿠버네티스 에러   
