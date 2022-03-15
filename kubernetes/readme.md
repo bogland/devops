@@ -1,7 +1,6 @@
 ## 쿠버네티스 설치  
 https://lindarex.github.io/kubernetes/ubuntu-kubernetes-installation-with-kubeadm/    
-> sudo kubeadm init --control-plane-endpoint < Master public IP >:6443 --pod-network-cidr=10.244.0.0/16 --upload-certs 
-> kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"  
+> sudo kubeadm init --control-plane-endpoint < Master public IP >:6443 --pod-network-cidr=10.244.0.0/16 --upload-certs   
 master는 init  
 worker는 join  
 
