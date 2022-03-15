@@ -4,6 +4,10 @@ https://lindarex.github.io/kubernetes/ubuntu-kubernetes-installation-with-kubead
 master는 init  
 worker는 join  
 
+## 쿠버네티스 포트 개방  
+Master : 6443,2379-2380,10250-10252  
+Worder : 10250,30000-32767  
+
 ## 방화벽 제거  
 ```
 systemctl stop firewalld  
