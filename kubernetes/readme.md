@@ -1,3 +1,8 @@
+## On-Premise 상에서 EC2 혹은 GCP 를 join 할려고 했으나 실패  
+- 리눅스에 가상 cpu 설치 명령어 multipass 를 이용하여 node cluster 구축  
+- https://medium.com/platformer-blog/kubernetes-multi-node-cluster-with-multipass-on-ubuntu-18-04-desktop-f80b92b1c6a7  
+
+
 ## 쿠버네티스 설치  
 https://lindarex.github.io/kubernetes/ubuntu-kubernetes-installation-with-kubeadm/    
 > sudo kubeadm init --control-plane-endpoint < Master public IP >:6443 --pod-network-cidr=10.244.0.0/16 --upload-certs   
