@@ -2,6 +2,8 @@
 - 리눅스에 가상 cpu 설치 명령어 multipass 를 이용하여 node cluster 구축  
 - https://medium.com/platformer-blog/kubernetes-multi-node-cluster-with-multipass-on-ubuntu-18-04-desktop-f80b92b1c6a7  
 
+## Multipass Expose Service through Linux IP  
+https://maurow.bitbucket.io/notes/multipass-vm-port-forwarding.html  
 
 ## 쿠버네티스 설치  
 https://lindarex.github.io/kubernetes/ubuntu-kubernetes-installation-with-kubeadm/    
